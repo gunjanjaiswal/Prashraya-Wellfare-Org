@@ -14,7 +14,7 @@ hamburger.addEventListener("keydown", (e) => {
   }
 });
 
-// Simple submit handler for query form (you can expand this)
+// Simple submit handler for query form
 document.getElementById("queryForm").addEventListener("submit", (e) => {
   e.preventDefault();
   const query = e.target.query.value.trim();
