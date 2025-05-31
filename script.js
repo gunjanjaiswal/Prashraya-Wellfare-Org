@@ -6,7 +6,7 @@ hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
 
-// Keyboard accessibility for hamburger
+// Keyboard accessibility for hamburger menu
 hamburger.addEventListener("keydown", (e) => {
   if (e.key === "Enter" || e.key === " ") {
     e.preventDefault();
