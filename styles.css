@@ -11,7 +11,7 @@ body {
   background-image: url("Photo-from-Harry-Shashikant-Gupta-1.jpg");
   background-size: cover;
   background-position: center;
-  color: #3c0b0b;
+  color: #130b3c;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -20,12 +20,12 @@ body {
 
 body::before {
   content: "";
+  background:linear-gradient(rgba(98, 6, 70, 0.805),rgba(1, 11, 83, 0.652));
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #6d6f45;
   opacity: 0.6;
   pointer-events: none;
   z-index: 0;
@@ -43,8 +43,8 @@ body::before {
   justify-content: space-between;
   margin: 10px;
   padding: 0.8rem 1rem;
-  background: linear-gradient(135deg, #1a1a1acc, #222222dd);
-  box-shadow: 0 2px 12px rgba(255, 215, 0, 0.25);
+  background: linear-gradient(135deg, #280377d8, #410890f0,rgb(0, 157, 255));
+  box-shadow: 0 2px 12px rgba(79, 206, 229, 0.627);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -66,7 +66,7 @@ body::before {
   width: 4vw;
   height: 4vw;
   border-radius: 50%;
-  filter: drop-shadow(0 0 2px #ffd700);
+  filter: drop-shadow(0 0 2px #e4287a);
 }
 
 .logo-text-group {
@@ -75,7 +75,7 @@ body::before {
 }
 
 .logo-text {
-  color: #89877a;
+  color: #eee7b7;
   font-weight: 600;
 }
 
@@ -96,13 +96,13 @@ body::before {
 /* Nav tile style */
 .nav-tile {
   background: #222;
-  padding: 0.6rem 1.5rem;
+  padding: 0.6rem 1rem;
   border-radius: 12px;
-  color: #eee;
-  font-size: 1.5rem;
+  color: #fa36a5;
+  font-size: 1rem;
   text-decoration: none;
   box-shadow:
-    0 2px 5px rgba(255, 215, 0, 0.15),
+    0 2px 5px rgba(255, 255, 255, 0.755),
     inset 0 -3px 5px #111;
   transition: all 0.3s ease;
   display: flex;
@@ -114,13 +114,13 @@ body::before {
 }
 
 .nav-tile:hover {
-  background: #ebe7d4;
+  background: #f42fa5;
   color: #222;
   box-shadow:
-    0 6px 15px #c9bf97,
-    inset 0 0 10px #fff9cc;
+    0 6px 15px #f33289,
+    inset 0 0 10px #f03ea5;
   transform: scale(1.08);
-  text-shadow: 0 0 4px #a57d00;
+  text-shadow: 0 0 4px #b92f74;
 }
 
 /* Hamburger (desktop + mobile) */
@@ -208,14 +208,14 @@ body::before {
 
 .cta-button {
   margin-bottom: 1.6rem;
-  background: linear-gradient(45deg, #e0b00f, #d6aa0e);
+  background: linear-gradient(45deg, #e4287a, #d60e79);
   border: none;
   border-radius: 10px;
   padding: 1rem 2.2rem;
   font-size: 1.5rem;
   color: #222;
   font-weight: 700;
-  box-shadow: 0 3px 20px #ffe000aa;
+  box-shadow: 0 3px 20px #ff0088aa;
   cursor: pointer;
   transition: all 0.35s ease;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
@@ -228,7 +228,8 @@ body::before {
 
 /* Footer */
 .footer {
-  background: linear-gradient(135deg, #1a1a1acc, #222222dd);
+  background: linear-gradient(135deg, #280377d8, #410890f0);
+  box-shadow: 0 2px 12px rgba(79, 206, 229, 0.627);
   color: #eee;
   padding: 2.4rem 2rem;
   display: flex;
@@ -246,7 +247,7 @@ body::before {
 .footer-section h3 {
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #ffd700;
+  color: #e4287a;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -274,7 +275,7 @@ body::before {
 .query-form button {
   padding: 0 1.3rem;
   border-radius: 8px;
-  background: #ffd700;
+  background: #ea156a;
   font-weight: 700;
   cursor: pointer;
   border: none;
@@ -308,10 +309,10 @@ body::before {
   right: -320px; /* hidden off screen */
   width: 280px;
   height: calc(100vh - 70px);
-  background: linear-gradient(135deg, #1a1a1acc, #222222dd);
-  padding: 2rem;
-  box-shadow: -10px 10px 25px rgba(255, 215, 0, 0.4);
+  background: linear-gradient(135deg, #280377d8, #410890f0);
+  box-shadow: 0 2px 12px rgba(79, 206, 229, 0.627);
   border-radius: 20px 0 0 20px;
+  padding: 2rem;
   z-index: 999;
   flex-direction: column;
   transition: right 0.35s ease;
@@ -324,22 +325,21 @@ body::before {
 
 /* Hide nav tiles on desktop */
 .nav-tile {
-  font-size: 1.3rem;
-  padding: 1.4rem 1.2rem;
+  font-size: 1rem;
+  padding: 1rem 0.8rem;
   margin-bottom: 0.8rem;
-  background: #333333dd;
-  color: #ffd700;
+  background: #cf0d5add;
+  color: #fffeff;
   box-shadow: none; /* remove shadow */
   border-radius: 0; /* remove round corners */
-  width: 100%; /* full width */
   height: auto; /* auto height */
   text-align: left;
 }
 
 /* Hover effect for nav tiles on desktop */
 .nav-tile:hover {
-  background: #ebe7d4;
-  color: #222;
+  background: #e4287a;
+  color: #f5eded;
   transform: scale(1.08);
 }
 
