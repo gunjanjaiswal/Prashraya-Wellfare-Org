@@ -1,4 +1,18 @@
-/* Reset & Base */
+/* ========== Root Variables ========== */
+:root {
+  --primary-font: "Lora", serif;
+  --text-dark: #130b3c;
+  --text-light: #eee;
+  --accent-pink: #e4287a;
+  --accent-yellow: #ffd700;
+  --bg-dark: #222;
+  --bg-footer: linear-gradient(135deg, #280377d8, #410890f0);
+  --bg-header: linear-gradient(135deg, #280377d8, #410890f0, rgb(0, 157, 255));
+  --shadow-light: rgba(255, 255, 255, 0.755);
+  --shadow-accent: rgba(79, 206, 229, 0.627);
+}
+
+/* ========== Reset & Base ========== */
 * {
   margin: 0;
   padding: 0;
@@ -7,11 +21,11 @@
 
 body {
   position: relative;
-  font-family: "Lora", serif;
+  font-family: var(--primary-font);
   background-image: url("Photo-from-Harry-Shashikant-Gupta-1.jpg");
   background-size: cover;
   background-position: center;
-  color: #130b3c;
+  color: var(--text-dark);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -20,7 +34,7 @@ body {
 
 body::before {
   content: "";
-  background:linear-gradient(rgba(98, 6, 70, 0.805),rgba(1, 11, 83, 0.652));
+  background: linear-gradient(rgba(98, 6, 70, 0.805), rgba(1, 11, 83, 0.652));
   position: fixed;
   top: 0;
   left: 0;
@@ -36,15 +50,15 @@ body::before {
   z-index: 1;
 }
 
-/* Navbar */
+/* ========== Navbar ========== */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 10px;
   padding: 0.8rem 1rem;
-  background: linear-gradient(135deg, #280377d8, #410890f0,rgb(0, 157, 255));
-  box-shadow: 0 2px 12px rgba(79, 206, 229, 0.627);
+  background: var(--bg-header);
+  box-shadow: 0 2px 12px var(--shadow-accent);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -65,8 +79,10 @@ body::before {
 .logo img {
   width: 4vw;
   height: 4vw;
+  min-width: 40px;
+  min-height: 40px;
   border-radius: 50%;
-  filter: drop-shadow(0 0 2px #e4287a);
+  filter: drop-shadow(0 0 2px var(--accent-pink));
 }
 
 .logo-text-group {
@@ -84,26 +100,23 @@ body::before {
   text-shadow: 0 0 4px #a57d00;
 }
 
-/* Nav links */
+/* Nav Links - Desktop */
 .nav-links {
   display: flex;
   gap: 1rem;
   font-weight: 600;
   letter-spacing: 0.05em;
-  transition: right 0.35s ease;
 }
 
-/* Nav tile style */
+/* Nav Tile */
 .nav-tile {
-  background: #222;
+  background: var(--bg-dark);
   padding: 0.6rem 1rem;
   border-radius: 12px;
-  color: #fa36a5;
+  color: var(--accent-pink);
   font-size: 1rem;
   text-decoration: none;
-  box-shadow:
-    0 2px 5px rgba(255, 255, 255, 0.755),
-    inset 0 -3px 5px #111;
+  box-shadow: 0 2px 5px var(--shadow-light), inset 0 -3px 5px #111;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
@@ -114,16 +127,14 @@ body::before {
 }
 
 .nav-tile:hover {
-  background: #f42fa5;
-  color: #222;
-  box-shadow:
-    0 6px 15px #f33289,
-    inset 0 0 10px #f03ea5;
+  background: var(--accent-pink);
+  color: var(--bg-dark);
+  box-shadow: 0 6px 15px #f33289, inset 0 0 10px #f03ea5;
   transform: scale(1.08);
   text-shadow: 0 0 4px #b92f74;
 }
 
-/* Hamburger (desktop + mobile) */
+/* Hamburger */
 .hamburger {
   width: 30px;
   height: 24px;
@@ -143,7 +154,6 @@ body::before {
   transform-origin: center;
 }
 
-/* Hamburger animation */
 .hamburger.open .bar:nth-child(1) {
   transform: rotate(45deg) translate(5px, 6px);
 }
@@ -154,49 +164,14 @@ body::before {
   transform: rotate(-45deg) translate(5px, -6px);
 }
 
-/* Mobile nav */
-@media (max-width: 768px) {
-  .nav-links {
-    flex-direction: column;
-    background: linear-gradient(135deg, #1a1a1acc, #222222dd);
-    position: fixed;
-    top: 70px;
-    right: -320px;
-    width: 280px;
-    height: calc(100vh - 70px);
-    padding: 2rem;
-    box-shadow: -10px 10px 25px rgba(255, 215, 0, 0.4);
-    border-radius: 20px 0 0 20px;
-    z-index: 999;
-  }
-
-  .nav-links.active {
-    right: 0;
-  }
-
-  .nav-tile {
-    font-size: 1.3rem;
-    padding: 1.4rem 1.2rem;
-    margin-bottom: 0.8rem;
-    background: #333333dd;
-    color: #ffd700;
-  }
-
-  .nav-tile:hover {
-    background: #ebe7d4;
-    color: #222;
-    transform: scale(1.08);
-  }
-}
-
-/* Main */
+/* ========== Main Content ========== */
 .main {
   max-width: 900px;
   margin: 3rem auto;
   padding: 0 1.5rem;
   flex-grow: 1;
   text-align: center;
-  color: #eee;
+  color: var(--text-light);
   font-weight: 400;
 }
 
@@ -208,7 +183,7 @@ body::before {
 
 .cta-button {
   margin-bottom: 1.6rem;
-  background: linear-gradient(45deg, #e4287a, #d60e79);
+  background: linear-gradient(45deg, var(--accent-pink), #d60e79);
   border: none;
   border-radius: 10px;
   padding: 1rem 2.2rem;
@@ -226,11 +201,11 @@ body::before {
   transform: scale(1.1);
 }
 
-/* Footer */
+/* ========== Footer ========== */
 .footer {
-  background: linear-gradient(135deg, #280377d8, #410890f0);
-  box-shadow: 0 2px 12px rgba(79, 206, 229, 0.627);
-  color: #eee;
+  background: var(--bg-footer);
+  box-shadow: 0 2px 12px var(--shadow-accent);
+  color: var(--text-light);
   padding: 2.4rem 2rem;
   display: flex;
   flex-wrap: wrap;
@@ -247,7 +222,7 @@ body::before {
 .footer-section h3 {
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #e4287a;
+  color: var(--accent-pink);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -257,6 +232,7 @@ body::before {
   font-weight: 400;
   display: block;
   margin-bottom: 0.4rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .query-form {
@@ -289,7 +265,7 @@ body::before {
   text-align: center;
 }
 
-/* Custom scrollbar */
+/* ========== Custom Scrollbar ========== */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -301,60 +277,43 @@ body::before {
   border-radius: 8px;
 }
 
+/* ========== Mobile Styles ========== */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background: linear-gradient(135deg, #1a1a1acc, #222222dd);
+    position: fixed;
+    top: 70px;
+    right: -320px;
+    width: 280px;
+    height: calc(100vh - 70px);
+    padding: 2rem;
+    box-shadow: -10px 10px 25px rgba(255, 215, 0, 0.4);
+    border-radius: 20px 0 0 20px;
+    z-index: 999;
+    transition: right 0.35s ease;
+  }
 
-/* Hide nav links by default on desktop */
-.nav-links {
-  position: fixed;
-  top: 70px;
-  right: -320px; /* hidden off screen */
-  width: 280px;
-  height: calc(100vh - 70px);
-  background: linear-gradient(135deg, #280377d8, #410890f0);
-  box-shadow: 0 2px 12px rgba(79, 206, 229, 0.627);
-  border-radius: 20px 0 0 20px;
-  padding: 2rem;
-  z-index: 999;
-  flex-direction: column;
-  transition: right 0.35s ease;
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-tile {
+    font-size: 1.3rem;
+    padding: 1.4rem 1.2rem;
+    margin-bottom: 0.8rem;
+    background: #333333dd;
+    color: var(--accent-yellow);
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .nav-tile:hover {
+    background: #ebe7d4;
+    color: var(--bg-dark);
+    transform: scale(1.08);
+  }
 }
-
-/* Show nav when active */
-.nav-links.active {
-  right: 0;
-}
-
-/* Hide nav tiles on desktop */
-.nav-tile {
-  font-size: 1rem;
-  padding: 1rem 0.8rem;
-  margin-bottom: 0.8rem;
-  background: #cf0d5add;
-  color: #fffeff;
-  box-shadow: none; /* remove shadow */
-  border-radius: 0; /* remove round corners */
-  height: auto; /* auto height */
-  text-align: left;
-}
-
-/* Hover effect for nav tiles on desktop */
-.nav-tile:hover {
-  background: #e4287a;
-  color: #f5eded;
-  transform: scale(1.08);
-}
-
-
-.footer-link {
-  color: #ddd;
-  text-decoration: none;
-  font-weight: 400;
-  display: block;
-  margin-bottom: 0.4rem;
-  background: none;        /* remove any background */
-  box-shadow: none;        /* remove shadows */
-  border-radius: 0;        /* remove border radius */
-  padding: 0;              /* remove padding */
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-
